@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ajax练习</title>
+<script>
+window.onload = function(){
+	oBtn = document.getElementById('btn');
+
+	oBtn.onclick = function(){
+		var xhr = new XMLHttpRequest();  //打开浏览器
+		xhr.open('get', '1.txt',true);  //在地址栏输入地址
+		xhr.send();                     //提交并发送请求
+		xhr.onreadystatechange = function(){//等待服务器返回内容
+			if(xhr.readyState == 4){
+				alert(xhr.responseText);
+			}
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+	<input type="button" value="按钮" id="btn" />
+</body>
+</html>
